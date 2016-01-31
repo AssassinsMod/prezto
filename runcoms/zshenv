@@ -9,3 +9,21 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# Editor
+export EDITOR="vim"
+
+# Shared Folder Shortcut
+export host="/home/shared"
+
+# NodeJS + NPM
+path+=( "$HOME/.npm-packages/bin" )
+manpath+=( "$HOME/.npm-packages/share/man" )
+
+# Ruby + RubyGems + Bundler
+path+=( "$(ruby -e 'print Gem.user_dir')/bin" )
+
+# Android SDK
+path+=( "/opt/android-sdk/tools" )
+path+=( "/opt/android-sdk/platform-tools" )
+path+=( "/opt/android-sdk/build-tools" )
